@@ -1,29 +1,29 @@
-import React from "react";
-export default Income;
+import React, { useState } from 'react';
+import Invest from './Invest';
 
-const Income = () => {
-  let result;
+function Income() {
+  
+  const  [income, setIncome] = useState(0)
+  const salary = income
+
+  
   
   return (
+    <div>
+    <h4>Balance</h4>
+    <h1>${income}</h1>
+
     <div className="inc-exp-container">
-      <h4>Income: </h4>
+      <h4>Income($): </h4>
       <p id="money-plus" className="money plus" />
         <div className="form-group">
-        <form>
-          
-          <input type="text" size="12" id="un" /><br />
-          <input type="submit" onClick="saveUn();" />
+        <form>   
+          <input type="text" size="10" id="incomeInput" onChange={event => setIncome(event.target.value)} />
+
         </form>
-         <h2></h2>
-         
-         
       </div>
     </div>
+    </div>
   );
-
-  
-
-
-
-
-
+  }
+  export default Income;
